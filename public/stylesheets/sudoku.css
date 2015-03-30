@@ -208,19 +208,26 @@ div {
   text-align: center;
 }
 
+.cellHeader:focus {
+  background: rgba(237, 194, 46, 0.3);
+}
+
 .cellHeaderValue {
   height: 0px;
   border: 0px;
 }
 
 .cellText {
-  margin-left: 10px;
   margin-top: 0px;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   text-align: center;
   font-weight: bold;
   font-size: 50px;
+}
+
+.cellText:focus {
+  background: rgba(237, 194, 46, 0.2);
 }
 
 .cellTextValue {
