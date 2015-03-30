@@ -1204,10 +1204,10 @@ StorageHandler.SaveHighScores = function(highScores) {
   localStorage.setItem("highScores", JSON.stringify(highScores));
 };
 
-StorageHandler.SaveGameWin = function(board, highScores) {
+StorageHandler.SaveGameWin = function(board) {
   StorageHandler.SaveGame(board);
-  StorageHandler.SaveHighScores(highScores);
-}
+  StorageHandler.SaveHighScores(board.highScores);
+};
 
 module.exports = StorageHandler;
 
