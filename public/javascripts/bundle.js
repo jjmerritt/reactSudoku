@@ -164,6 +164,10 @@ var Cell = React.createClass({displayName: 'Cell',
     if (isNaN(value)) {
       return;
     }
+    if (value == cell.value) {
+      SudokuActions.deleteBoardValue(cell.row, cell.column);
+      return;
+    }
     SudokuActions.updateBoardValue(cell.row, cell.column, value);
   },
 
