@@ -253,7 +253,7 @@ var Header = React.createClass({displayName: 'Header',
         React.DOM.h1({className: "title"}, " SUDOKU "), 
         NewGameButton(null), 
         React.DOM.div({className: "explanation"}, 
-          "By Justin Merritt"
+          "A Game of Logic -- Try to beat your best time!"
         )
       )
     );

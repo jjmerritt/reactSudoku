@@ -13,7 +13,7 @@ var Header = React.createClass({
         <h1 className="title"> SUDOKU </h1>
         <NewGameButton />
         <div className="explanation">
-          By Justin Merritt
+          A Game of Logic -- Try to beat your best time!
         </div>
       </div>
     );
