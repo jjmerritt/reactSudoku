@@ -34,6 +34,9 @@ var Cell = React.createClass({
   _renderPossibilities: function() {
     var possibilities = this.props.cell.possibilities;
     var result = ""; 
+    if (this.props.cell.value !== 0) {
+      return result;
+    }
     var space = possibilities.size <= 6 ? " " : "";
     possibilities.forEach(function(possibility) {
       result += possibility.toString() + space;

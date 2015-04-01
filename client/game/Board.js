@@ -210,15 +210,28 @@ Board.NewGame = function(difficulty) {
 Board.LoadOrNew = function(difficulty) {
   var storedBoard = StorageHandler.LoadGame();
   if (storedBoard) {
+    return Board._FromStoredBoard(storedBoard);
+  }
+  return Board.NewGame(difficulty);
+};
+
+Board._FromStoredBoard = function(storedBoard) {
     var board = new Board();
     board.difficulty = storedBoard.difficulty;
-    board.rows = storedBoard.rows;
+    board.rows = Board._LoadCells(storedBoard.rows);
     board.time = storedBoard.time;
     board.win = storedBoard.win;
     board.highScores = HighScores.LoadOrNew();
     return board;
-  }
-  return Board.NewGame(difficulty);
 };
+
+Board._LoadCells = function(rows) {
+  rows.forEach(function(row) {
+    row.forEach(function(cell) {
+      cell.possibilities = Immutable.Set(cell.possibilities);
+    });
+  });
+  return rows;
+}
 
 module.exports = Board;
