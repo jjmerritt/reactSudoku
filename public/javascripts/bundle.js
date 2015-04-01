@@ -215,6 +215,40 @@ var Difficulty = React.createClass({displayName: 'Difficulty',
 
 module.exports = Difficulty;
 
+},{"React":"/Users/jmerritt/Projects/react-sudoku/node_modules/React/react.js"}],"/Users/jmerritt/Projects/react-sudoku/client/components/Footer.jsx":[function(require,module,exports){
+/** @jsx React.DOM */var React = require('React');
+
+var Footer = React.createClass({displayName: 'Footer',
+  render: function() {
+    return (
+      React.DOM.div({className: "footer"}, 
+        React.DOM.div({className: "howToPlay"}, 
+          React.DOM.b(null, " HOW TO PLAY: "), " Each ", React.DOM.b(null, "row"), ", ", React.DOM.b(null, "column"), ", and ", React.DOM.b(null, "mini 3x3" + ' ' + 
+          "grid"), " must all contain ", React.DOM.b(null, "1-9"), ".  No ", React.DOM.b(null, "row"), ",",  
+          React.DOM.b(null, " column"), " or ", React.DOM.b(null, "mini 3x3 grid"), " can contain the same" + ' ' + 
+          "number twice."
+        ), 
+        React.DOM.div({className: "endNote"}, 
+          React.DOM.p(null, "Created by" + ' ' + 
+          " ", React.DOM.a({href: "https://github.com/jjmerritt"}, "Justin Merritt"), " using" + ' ' + 
+          " ", React.DOM.a({href: "http://facebook.github.io/react/"}, "react.js"), "," + ' ' + 
+          " ", React.DOM.a({href: "http://expressjs.com/"}, "express.js"), ", and the" + ' ' + 
+          " ", React.DOM.a({href: "http://facebook.github.io/flux/docs/overview.html"}, "flux" + ' ' +
+          "architecture"), 
+          "  (", 
+          React.DOM.a({href: "http://facebook.github.io/immutable-js/"}, "and"), 
+          " ", React.DOM.a({href: "http://browserify.org/"}, "many"), 
+          " ", React.DOM.a({href: "https://github.com/andreypopp/reactify"}, "others!"), ")." + ' ' +  
+          "Primary style influenced by" + ' ' + 
+          " ", React.DOM.a({href: "http://gabrielecirulli.github.io/2048/"}, "2048"), ".")
+        )
+      )
+    );
+  }
+});
+
+module.exports = Footer;
+
 },{"React":"/Users/jmerritt/Projects/react-sudoku/node_modules/React/react.js"}],"/Users/jmerritt/Projects/react-sudoku/client/components/Grid.jsx":[function(require,module,exports){
 /** @jsx React.DOM */var React = require('React');
 var Row = require('./Row.jsx');
@@ -354,6 +388,7 @@ module.exports = Row;
 var SudokuStore = require('../stores/SudokuStore');
 var Header = require('./Header.jsx');
 var Grid = require('./Grid.jsx');
+var Footer = require('./Footer.jsx');
 var WinScreen = require('./WinScreen.jsx');
 
 function getSudokuState() {
@@ -378,6 +413,7 @@ var SudokuApp = React.createClass({displayName: 'SudokuApp',
       React.DOM.div({className: "sudokuApp"}, 
         Header({board: this.state.board}), 
         Grid({board: this.state.board}), 
+        Footer(null), 
         WinScreen({board: this.state.board})
       )
     );
@@ -391,7 +427,7 @@ var SudokuApp = React.createClass({displayName: 'SudokuApp',
 
 module.exports = SudokuApp;
 
-},{"../stores/SudokuStore":"/Users/jmerritt/Projects/react-sudoku/client/stores/SudokuStore.js","./Grid.jsx":"/Users/jmerritt/Projects/react-sudoku/client/components/Grid.jsx","./Header.jsx":"/Users/jmerritt/Projects/react-sudoku/client/components/Header.jsx","./WinScreen.jsx":"/Users/jmerritt/Projects/react-sudoku/client/components/WinScreen.jsx","React":"/Users/jmerritt/Projects/react-sudoku/node_modules/React/react.js"}],"/Users/jmerritt/Projects/react-sudoku/client/components/Timer.jsx":[function(require,module,exports){
+},{"../stores/SudokuStore":"/Users/jmerritt/Projects/react-sudoku/client/stores/SudokuStore.js","./Footer.jsx":"/Users/jmerritt/Projects/react-sudoku/client/components/Footer.jsx","./Grid.jsx":"/Users/jmerritt/Projects/react-sudoku/client/components/Grid.jsx","./Header.jsx":"/Users/jmerritt/Projects/react-sudoku/client/components/Header.jsx","./WinScreen.jsx":"/Users/jmerritt/Projects/react-sudoku/client/components/WinScreen.jsx","React":"/Users/jmerritt/Projects/react-sudoku/node_modules/React/react.js"}],"/Users/jmerritt/Projects/react-sudoku/client/components/Timer.jsx":[function(require,module,exports){
 /** @jsx React.DOM */var React = require('React');
 var SudokuActions = require('../actions/SudokuActions');
 var SudokuStore = require('../stores/SudokuStore');

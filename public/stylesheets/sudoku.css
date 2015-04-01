@@ -248,6 +248,27 @@ div {
   margin-right: 0px;
 }
 
+.footer {
+  font-size: 20px;
+  line-height: 30px;
+  display: block;
+}
+
+.footer a {
+  font-weight: bold;
+  color: #776e65;
+}
+
+.howToPlay {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+.endNote {
+  margin-top: 25px;
+  border-top: 1px solid;
+}
+
 .win {
   position: absolute;
   top: 180px;

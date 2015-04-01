@@ -2,6 +2,7 @@ var React = require('React');
 var SudokuStore = require('../stores/SudokuStore');
 var Header = require('./Header.jsx');
 var Grid = require('./Grid.jsx');
+var Footer = require('./Footer.jsx');
 var WinScreen = require('./WinScreen.jsx');
 
 function getSudokuState() {
@@ -26,6 +27,7 @@ var SudokuApp = React.createClass({
       <div className="sudokuApp">
         <Header board={this.state.board} />
         <Grid board={this.state.board} />
+        <Footer />
         <WinScreen board={this.state.board} />
       </div>
     );
