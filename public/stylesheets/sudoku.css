@@ -281,6 +281,16 @@ div {
   border-top: 1px solid;
 }
 
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
 .win {
   position: absolute;
   top: 180px;
@@ -302,6 +312,13 @@ div {
 }
 
 .wintrue {
+  opacity: 0;
+  animation: fadeIn ease-out;
+  animation-duration: 2s;
+  animation-fill-mode:forwards;
+  -webkit-animation: fadeIn ease-out;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-fill-mode:forwards;
   z-index: 2;
 }
 
