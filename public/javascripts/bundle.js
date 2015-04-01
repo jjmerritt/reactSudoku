@@ -315,6 +315,8 @@ var NewGameButton = React.createClass({displayName: 'NewGameButton',
       return (
         React.DOM.div({className: "newGameDifficulties"}, 
           React.DOM.span(null, " Difficulty "), 
+          React.DOM.a({className: "newGameCancel", 
+            onClick: this._handleCancelNewGame}, "x"), 
           React.DOM.a({className: "newGameDifficulty Easy", 
              onClick: this._handleEasy}, " Easy "), 
           React.DOM.a({className: "newGameDifficulty Medium", 
@@ -335,6 +337,10 @@ var NewGameButton = React.createClass({displayName: 'NewGameButton',
 
   _handleNewGameClick: function() {
     this.setState({clicked: true});
+  },
+
+  _handleCancelNewGame: function() {
+    this.setState({clicked: false});
   },
 
   _handleEasy: function() {

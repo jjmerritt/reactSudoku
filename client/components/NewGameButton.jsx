@@ -16,6 +16,8 @@ var NewGameButton = React.createClass({
       return (
         <div className="newGameDifficulties">
           <span> Difficulty </span>
+          <a className="newGameCancel"
+            onClick={this._handleCancelNewGame}>x</a>
           <a className="newGameDifficulty Easy"
              onClick={this._handleEasy}> Easy </a>
           <a className="newGameDifficulty Medium"
@@ -36,6 +38,10 @@ var NewGameButton = React.createClass({
 
   _handleNewGameClick: function() {
     this.setState({clicked: true});
+  },
+
+  _handleCancelNewGame: function() {
+    this.setState({clicked: false});
   },
 
   _handleEasy: function() {
