@@ -616,10 +616,10 @@ module.exports = {
   // game, based on the given difficulty.  This is a poor means of 
   // identifying difficulty, but is much simpler than other methods. 
   TILES: {
-    "Easy": 46,
-    "Medium": 48,
-    "Hard": 50,
-    "Extreme": 52
+    "Easy": 42,
+    "Medium": 44,
+    "Hard": 46,
+    "Extreme": 48
   },
 
 };
