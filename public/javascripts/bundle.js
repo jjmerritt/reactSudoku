@@ -986,6 +986,11 @@ BoardSolver._Solve = function(board) {
     current = queue.pop();
     if (BoardUtils._BoardIsFilled(current)) {
       solutions.push(current);
+      // Added the break here to terminate early when we've found one solution
+      // This means that the solutions are not necessarily unique (there may 
+      // be multiple solutions to one board) but the board is generated about 
+      // 1000x faster.
+      break;
     } else {
       nextBoards = BoardSolver._SolveStep(current);
       for (var i = 0; i < nextBoards.length; i++) {
